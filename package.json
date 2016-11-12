@@ -1,6 +1,6 @@
 {
     "name"        : "@whizark/cz-cli",
-    "version"     : "0.0.0",
+    "version"     : "0.1.0",
     "description" : "commitizen CLI and the adapters as local dependencies",
     "keywords"    : [
         "conventional-changelog",
