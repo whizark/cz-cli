@@ -1,6 +1,7 @@
 # cz-cli
 
 [![npm][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
 
 [commitizen][] CLI and the adapters as local dependencies.
 
@@ -61,3 +62,6 @@ In this case, you need not add `scripts.commit` into your `package.json`.
 
 [npm-image]: https://img.shields.io/npm/v/@whizark/cz-cli.svg
 [npm-url]: https://www.npmjs.com/@whizark/cz-cli
+
+[travis-image]: https://travis-ci.org/whizark/cz-cli.svg?branch=master
+[travis-url]: https://travis-ci.org/whizark/cz-cli

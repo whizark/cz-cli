@@ -1,0 +1,52 @@
+sudo: false
+
+language: node_js
+
+node_js:
+    - 4
+    - 6
+    - 7
+
+matrix:
+    fast_finish: true
+
+cache:
+    directories:
+        - node_modules
+
+before_install:
+    - npm config set spin false
+    - npm config set progress false
+    - npm install -g npm
+
+install:
+    - npm prune
+    - npm update
+
+script:
+    - npm install . -g >/dev/null && npm uninstall . -g >/dev/null
+    - mkdir -p "/tmp/$TRAVIS_REPO_SLUG" && cd "/tmp/$TRAVIS_REPO_SLUG" && npm init -y >/dev/null
+    - npm install "$TRAVIS_BUILD_DIR" >/dev/null && npm uninstall "$TRAVIS_BUILD_DIR" >/dev/null
+    - node -e "const config = require('@$TRAVIS_REPO_SLUG');"
+
+deploy:
+    - provider: npm
+      email: npm@whizark.com
+      api_key:
+          secure: OqRkQ5dJsEG2LndAYpifzvaDfCbu93hloX3ddzdUsjy95InKzMxNTlTcYF07Ry7yl0GjBJhGZXX4z3QSSQwi8uld1JBSVvWmZ/YUXmt0vLR2xZFjL1WsHuXVPT++Hd8eHF/r3HTuhqIyEX/knn6TIWdXzdVXgEn8i48BgLUYjyHWjVxHQxJelf/gCwDLN3SdIYQ5TF+c1VjXR+79AvxaJSEuo9sg/aMwBOTYKP7PV7M7E5zrUgAuNpVSr8ZF5S7KHYKDATXIq8zkks2tfMS3IgCNL/mk0a5x0L54U1vfH4NHguO6PmBujo0BqOD0pZ+bwx7bjEag5HrYi/c5KoEPX59ii6lZi+8KFxRjg29OMUMIyV3YNx1hP4cXN1jrIl86UpwNvy/vRfQOp+U/SuzqRxlTuvAWlAH4gYFIXNE8omZb+haw1zvjpyJ4T1O9gQocQbSLbh+DaDqPBMNYjl8l1V0ZULNflyUAkRHn+Mxwdsax356C6Pux90DpN30/qFtId5PPUD2SJbZY4qegDcb0Z2grdG5D7uLRp/luAR52jj/guw7/mamv3r5Ioe4Zc1GfDDC4ca2paWqFpZiNrO5FqROiucB8q7y840RUMOJon+kgwkLYoOnBbA7AbG9eyxavmldj1flTgevOjC2SXipeI+0GTBh8pCcYIEpoCLwVMp0=
+      on:
+          node: 6
+          repo: whizark/cz-cli
+          branch: master
+          tags: true
+
+notifications:
+    email: false
+
+    slack:
+        rooms:
+            - secure: mVxa39sKq8JS4oeVEBIb3dNH6ZL4T1z1YEkEqARmB+s0wkraMdIhiGGTpgkOeIOqXU5krPPuLC9qmjnQTegEeDQ9YMDiaF5sqZkJmuW9n3fQDZiSXsIgKxQ2ttHIaQuBwt7fNzi/kemD4WCw+QgmjvQX+QVBsNMP3aCO2/+iyjx4ZOqvrTniflbV4616XjH27B/twlbJPbWum3vReL6w0CpuOa/jtZdq+HBtlYJ/cJP3FBQekjc1e735C+lsaqCAM9Sue95t4+LnOUnXzS9Ja2zY6mg+yRrkr98CMmKzHHxZPDZz250J/948MmvbA7ebMRv52BQto8l3TgNRrU90vFdJIMYC0B85yJRx+IkMV4LX1Fq21rTtFUvontaQs1ATPb69eKNYvsXWG/I1NHJZmmCk6MLP+hp9r1UzTn1nFFB2lAfbauRCQdyXcuctvzOgyHfRKrxeVAyKcYlR7FkzCvUJ0aFut9WD+Wl/Ic10SvqUkSgI6kvGSWcOCQD91GXuVmk9N0X7N5UtcLpiAHB2IJlu3NtQqsY8+XgtWWcRI0y+GWSL8Wq64gn/iGTxUAXw8935dzXK7Yv/6LlbH1IxAuG/QW5SM6hI/rbdM1zw79/kCJBvG7iW7TZYF2w6T0j4RF9lVZhmFc5JG6XIbGDahgF8CLqJTiA9ruFCt6hJSAc=
+        on_pull_requests: false
+        on_start: never
+        on_success: never
+        on_failure: change
