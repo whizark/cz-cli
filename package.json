@@ -1,0 +1,39 @@
+{
+    "name"        : "@whizark/cz-cli",
+    "version"     : "0.0.0",
+    "description" : "commitizen CLI and the adapters as local dependencies",
+    "keywords"    : [
+        "conventional-changelog",
+        "commitizen",
+        "cz-cli",
+        "cz-conventional-changelog",
+        "cz-customizable"
+    ],
+    "homepage"    : "https://github.com/whizark/cz-cli",
+    "bugs"        : {
+        "url": "https://github.com/whizark/cz-cli/issues"
+    },
+    "license"     : "MIT",
+    "author"      : {
+        "name": "Whizark",
+        "url" : "http://whizark.com"
+    },
+    "files"       : [
+        "index.js",
+        "bin"
+    ],
+    "main"        : "./index.js",
+    "bin"         : {
+        "git-cz": "./bin/git-cz"
+    },
+    "repository"  : {
+        "type": "git",
+        "url" : "https://github.com/whizark/cz-cli.git"
+    },
+    "dependencies": {
+        "app-root-path"            : "~2.0.1",
+        "commitizen"               : "~2.8.6",
+        "cz-conventional-changelog": "~1.2.0",
+        "cz-customizable"          : "~4.0.0"
+    }
+}
