@@ -28,6 +28,7 @@ script:
     - mkdir -p "/tmp/$TRAVIS_REPO_SLUG" && cd "/tmp/$TRAVIS_REPO_SLUG" && npm init -y >/dev/null
     - npm install "$TRAVIS_BUILD_DIR" >/dev/null && npm uninstall "$TRAVIS_BUILD_DIR" >/dev/null
     - node -e "const czCli = require('@$TRAVIS_REPO_SLUG');"
+    - cd "$TRAVIS_BUILD_DIR"
 
 deploy:
     - provider: npm
