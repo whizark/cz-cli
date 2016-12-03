@@ -23,7 +23,7 @@ However, this package will support it in order not to require
 Install `@whizark/cz-cli` as a local dependency.
 
 ```sh
-npm install @whizark/cz-cli --save
+npm install @whizark/cz-cli --save-dev
 ```
 
 ## Usage
