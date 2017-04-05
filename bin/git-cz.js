@@ -16,7 +16,7 @@ if (pkg &&
     const czCustomizable = require.resolve('../adapter/cz-customizable');
 
     bootstrap({
-        cliPath: cliPath,
+        cliPath,
         config : {
             path: czCustomizable
         }
@@ -31,7 +31,7 @@ fs.access(path.join(root.path, CZ_CONFIG_NAME), fs.R_OK, (err) => {
     const czConventionalChangelog = require.resolve('cz-conventional-changelog');
 
     bootstrap({
-        cliPath: cliPath,
+        cliPath,
         config : {
             path: !err ? czCustomizable : czConventionalChangelog
         }
