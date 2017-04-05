@@ -9,20 +9,32 @@ const bootstrap  = require('../index').bootstrap;
 const pkg            = findConfig.require('package.json', {home: false});
 const CZ_CONFIG_NAME = '.cz-config.js';
 
-if (pkg &&
-    pkg.config && pkg.config['cz-customizable'] && pkg.config['cz-customizable'].config
-) {
-    const cliPath        = path.dirname(path.dirname(require.resolve('commitizen')));
-    const czCustomizable = require.resolve('../adapter/cz-customizable');
+if (pkg && pkg.config) {
+    const cliPath = path.dirname(path.dirname(require.resolve('commitizen')));
 
-    bootstrap({
-        cliPath,
-        config : {
-            path: czCustomizable
-        }
-    });
+    if (pkg.config.commitizen && pkg.config.commitizen.path) {
+        bootstrap({
+            cliPath,
+            config: {
+                path: pkg.config.commitizen.path
+            }
+        });
 
-    return;
+        return;
+    }
+
+    if (pkg.config['cz-customizable'] && pkg.config['cz-customizable'].config) {
+        const czCustomizable = require.resolve('../adapter/cz-customizable');
+
+        bootstrap({
+            cliPath,
+            config: {
+                path: czCustomizable
+            }
+        });
+
+        return;
+    }
 }
 
 fs.access(path.join(root.path, CZ_CONFIG_NAME), fs.R_OK, (err) => {
