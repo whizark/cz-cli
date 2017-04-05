@@ -32,7 +32,6 @@
         "url" : "https://github.com/whizark/cz-cli.git"
     },
     "dependencies": {
-        "app-root-path"            : "~2.0.1",
         "commitizen"               : "~2.9.6",
         "cz-conventional-changelog": "~2.0.0",
         "cz-customizable"          : "~5.0.0",

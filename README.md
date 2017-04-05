@@ -14,8 +14,8 @@ based on the following steps.
 2.  If `config.cz-customizable.config` exists in your `package.json`,
     the config and [cz-customizable][] are used.
 
-3.  If `.cz-config.js` exists in your package root directory,
-    the `.cz-config.js` and [cz-customizable][] are used.
+3.  If `.cz-config.js` exists in the current working directory, the
+    `.cz-config.js` and [cz-customizable][] are used.
 
 4.  Otherwise [cz-conventional-changelog][] is used.
 

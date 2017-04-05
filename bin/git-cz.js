@@ -1,8 +1,6 @@
 'use strict';
 
-const root       = require('app-root-path');
 const path       = require('path');
-const fs         = require('fs');
 const findConfig = require('find-config');
 const bootstrap  = require('../index').bootstrap;
 
@@ -36,14 +34,26 @@ if (pkg && pkg.config) {
     }
 }
 
-fs.access(path.join(root.path, CZ_CONFIG_NAME), fs.R_OK, (err) => {
-    const czCustomizable          = require.resolve('../adapter/cz-customizable');
-    const czConventionalChangelog = require.resolve('cz-conventional-changelog');
+const config = findConfig.obj(CZ_CONFIG_NAME, {home: false});
+
+if (config !== null) {
+    const czCustomizable = require.resolve('../adapter/cz-customizable');
 
     bootstrap({
         cliPath,
         config: {
-            path: !err ? czCustomizable : czConventionalChangelog
+            path: czCustomizable
         }
     });
+
+    return;
+}
+
+const czConventionalChangelog = require.resolve('cz-conventional-changelog');
+
+bootstrap({
+    cliPath,
+    config: {
+        path: czConventionalChangelog
+    }
 });
