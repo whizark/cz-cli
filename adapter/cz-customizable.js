@@ -18,14 +18,6 @@ const path           = require('path');
 const buildCommit    = require('cz-customizable/buildCommit');
 
 function readConfigFile() {
-    const config = findConfig.require(CZ_CONFIG_NAME, {home: false});
-
-    if (config) {
-        console.info('>>> cz-customizable config file has been found.');
-
-        return config;
-    }
-
     const pkg = findConfig.require('package.json', {home: false});
 
     if (pkg &&
@@ -36,6 +28,14 @@ function readConfigFile() {
         console.info('>>> Using cz-customizable config specified in your package.json: ', pkgPath);
 
         return require(pkgPath);
+    }
+
+    const config = findConfig.require(CZ_CONFIG_NAME, {home: false});
+
+    if (config) {
+        console.info('>>> cz-customizable config file has been found.');
+
+        return config;
     }
 
     log.warn(

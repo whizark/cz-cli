@@ -8,11 +8,11 @@
 The commitizen adapter that is used when you commit your changes is determined
 based on the following steps.
 
-1.  If `.cz-config.js` exists in your package root directory,
-    [cz-customizable][] is used.
+1.  If `config.cz-customizable.config` exists in your `package.json`,
+    the config and [cz-customizable][] are used.
 
-2.  If `config.cz-customizable.config` exists in your `package.json`,
-    [cz-customizable][] is used.
+2.  If `.cz-config.js` exists in your package root directory,
+    the `.cz-config.js` and [cz-customizable][] are used.
 
 3.  Otherwise [cz-conventional-changelog][] is used.
 
