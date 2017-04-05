@@ -7,7 +7,7 @@ const findConfig = require('find-config');
 const bootstrap  = require('../index').bootstrap;
 
 const pkg            = findConfig.require('package.json', {home: false});
-const cliPath        = path.dirname(path.dirname(require.resolve('commitizen')));
+const cliPath        = path.resolve(require.resolve('commitizen'), '../../');
 const CZ_CONFIG_NAME = '.cz-config.js';
 
 if (pkg && pkg.config) {
