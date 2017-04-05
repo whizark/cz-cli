@@ -32,7 +32,7 @@ fs.access(path.join(root.path, CZ_CONFIG_NAME), fs.R_OK, (err) => {
 
     bootstrap({
         cliPath,
-        config : {
+        config: {
             path: !err ? czCustomizable : czConventionalChangelog
         }
     });
