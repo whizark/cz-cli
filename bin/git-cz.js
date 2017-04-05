@@ -8,10 +8,13 @@ const bootstrap = require('../index').bootstrap;
 const CZ_CONFIG_NAME = '.cz-config.js';
 
 fs.access(path.join(root.path, CZ_CONFIG_NAME), fs.R_OK, (err) => {
-    const adapter = !err ? 'cz-customizable' : 'cz-conventional-changelog';
+    const cliPath                 = path.dirname(path.dirname(require.resolve('commitizen')));
+    const czCustomizable          = require.resolve('cz-customizable');
+    const czConventionalChangelog = require.resolve('cz-conventional-changelog');
+    const adapter                 = !err ? czCustomizable : czConventionalChangelog;
 
     bootstrap({
-        cliPath: path.join(__dirname, '../node_modules/commitizen'),
+        cliPath: cliPath,
         config : {
             'path': adapter
         }
