@@ -13,10 +13,9 @@ based on the following steps.
 
 2.  Otherwise [cz-conventional-changelog][] is used.
 
-`.cz-config.js` is [deprecated][] and it will be removed after the next major
-release of `cz-customizable`.
-However, this package will support it in order not to require
-`config.cz-customizable` in `package.json`.
+`.cz-config.js` has been [deprecated][] and removed since official
+`cz-customizable@5.0.0`. However, this package supports it in order not to
+require `config.cz-customizable.config` in `package.json`.
 
 ## Installation
 
@@ -64,7 +63,7 @@ In this case, you need not add `scripts.commit` into your `package.json`.
 [cz-customizable]: https://github.com/leonardoanalista/cz-customizable
 [npm-quick-run]: https://github.com/bahmutov/npm-quick-run
 [npm-run]: https://github.com/timoxley/npm-run
-[deprecated]: https://github.com/leonardoanalista/cz-customizable#you-have-two-options-to-configure-cz-customizable
+[deprecated]: https://github.com/leonardoanalista/cz-customizable/commit/7ab2559725b3fb83cabaabff32a2be46425f01e8#diff-04c6e90faac2675aa89e2176d2eec7d8L44
 
 [npm-image]: https://img.shields.io/npm/v/@whizark/cz-cli.svg
 [npm-url]: https://www.npmjs.com/@whizark/cz-cli
