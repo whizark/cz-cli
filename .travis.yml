@@ -37,7 +37,7 @@ deploy:
       api_key:
           secure: OqRkQ5dJsEG2LndAYpifzvaDfCbu93hloX3ddzdUsjy95InKzMxNTlTcYF07Ry7yl0GjBJhGZXX4z3QSSQwi8uld1JBSVvWmZ/YUXmt0vLR2xZFjL1WsHuXVPT++Hd8eHF/r3HTuhqIyEX/knn6TIWdXzdVXgEn8i48BgLUYjyHWjVxHQxJelf/gCwDLN3SdIYQ5TF+c1VjXR+79AvxaJSEuo9sg/aMwBOTYKP7PV7M7E5zrUgAuNpVSr8ZF5S7KHYKDATXIq8zkks2tfMS3IgCNL/mk0a5x0L54U1vfH4NHguO6PmBujo0BqOD0pZ+bwx7bjEag5HrYi/c5KoEPX59ii6lZi+8KFxRjg29OMUMIyV3YNx1hP4cXN1jrIl86UpwNvy/vRfQOp+U/SuzqRxlTuvAWlAH4gYFIXNE8omZb+haw1zvjpyJ4T1O9gQocQbSLbh+DaDqPBMNYjl8l1V0ZULNflyUAkRHn+Mxwdsax356C6Pux90DpN30/qFtId5PPUD2SJbZY4qegDcb0Z2grdG5D7uLRp/luAR52jj/guw7/mamv3r5Ioe4Zc1GfDDC4ca2paWqFpZiNrO5FqROiucB8q7y840RUMOJon+kgwkLYoOnBbA7AbG9eyxavmldj1flTgevOjC2SXipeI+0GTBh8pCcYIEpoCLwVMp0=
       on:
-          node: 6
+          node: 8
           repo: whizark/cz-cli
           branch: master
           tags: true
