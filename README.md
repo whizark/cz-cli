@@ -3,8 +3,6 @@
 [![npm][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 
-**DEPRECATED:** Use [`npx`][npx] instead with `config.commitizen.path`, `config.cz-customizable.config` in `package.json`.
-
 [commitizen][] CLI and the adapters as local dependencies.
 
 The commitizen adapter that is used when you commit your changes is determined
@@ -67,7 +65,6 @@ npm-run git cz
 In this case, you need not add `scripts.commit` into your `package.json`.
 
 [commitizen]: https://github.com/commitizen/cz-cli
-[npx]: https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner
 [cz-conventional-changelog]: https://github.com/commitizen/cz-conventional-changelog
 [cz-customizable]: https://github.com/leonardoanalista/cz-customizable
 [npm-quick-run]: https://github.com/bahmutov/npm-quick-run
