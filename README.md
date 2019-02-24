@@ -19,10 +19,6 @@ based on the following steps.
 
 4.  Otherwise [cz-conventional-changelog][] is used.
 
-`.cz-config.js` has been [deprecated][] and removed since official
-`cz-customizable@5.0.0`. However, this package supports it in order not to
-require `config.cz-customizable.config` in `package.json`.
-
 ## Installation
 
 Install `@whizark/cz-cli` as a local dependency.
