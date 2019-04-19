@@ -32,7 +32,7 @@
         "url" : "https://github.com/whizark/cz-cli.git"
     },
     "dependencies": {
-        "commitizen"               : "3.0.7",
+        "commitizen"               : "3.1.1",
         "cz-conventional-changelog": "2.1.0",
         "cz-customizable"          : "5.5.3",
         "editor"                   : "1.0.0",
