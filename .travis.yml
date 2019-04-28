@@ -3,10 +3,10 @@ sudo: false
 language: node_js
 
 node_js:
-    - 6
     - 8
     - 10
     - 11
+    - 12
 
 matrix:
     fast_finish: true
@@ -36,7 +36,7 @@ deploy:
       api_key:
           secure: G5JUJ+wny0mj5bk3PENajdMg7uzubT4CKEvNC/WXZSP+sJxu8gEs5IiYThkwWLjIjcnjx8akMZkGhaSFJFk0PHlzY7ms8pNO9TBw9AHuNdjZ3yS6mvTDQoKqixumVjfSJ5M7742casauGip/vQp9mqWupf+GOEbj08FQWmvUuaUWZAtVEV3tgobOBqK/Sc2lWU+LHCLKhr73+iA8K1e8/0QU4fRD9cWxKkf+7jLrZWoj9HAR9668EeYxv+Yw5KYby7EpRuR++1+H6EW8j6H7T5dh85/ZoK+tw81mMv7cLpXiZiN1tEpUPa7KsqFk7R1mjaHx92ukbdfexlgVzLFncbAj8DeOSIrx2LUvKmraFNAjBbG8+RLRABqQHPSKmOfkqFMZ8/m7z9hdJF7W8p1SupiAQ5S5xoec/iY6r+3XSphGzS9dpsM8u4vcG7RkbW1PwKghVC2kvyHSlalaB8nxE9uRMIA02OEfSdKnsY2hNudj4p7LsBrMoggTQnlheKC5oHp9LR/Av9MU/wL/FUAAjUQ/yggDgSCRzqY+16yGlMZCh7YCV790+R4BZ0Gd6evLqYryA2F5sAygjbJPuxDL+cvFnxKHjXS1Q2m66KcA0jEVIQTNwzabneBfQlZuQ3XwKUutV9VjhEQRhH9Y/pyNodPEbOZDZvfqf/rLhOTueqw=
       on:
-          node: 8
+          node: 12
           repo: whizark/cz-cli
           branch: master
           tags: true
