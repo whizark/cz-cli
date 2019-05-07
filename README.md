@@ -5,7 +5,7 @@
 
 ## Deprecated
 
-This package has been depreated because of:
+This package has been depreated because:
 
 * [commitizen][] now supports [`git commit` workflow by using git hooks and the `--hook` command-line option](https://github.com/commitizen/cz-cli#optional-running-commitizen-on-git-commit).
 * [commitizen][] also allows you to configure an adapter to use in `package.json`, `.czrc` or `.cz.json`.
