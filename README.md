@@ -3,6 +3,15 @@
 [![npm][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 
+## Deprecated
+
+This package has been depreated because of:
+
+* [commitizen][] now supports [`git commit` workflow by using git hooks and the `--hook` command-line option](https://github.com/commitizen/cz-cli#optional-running-commitizen-on-git-commit).
+* [commitizen][] also allows you to configure an adapter to use in `package.json`, `.czrc` or `.cz.json`.
+
+---
+
 [commitizen][] CLI and the adapters as local dependencies.
 
 The commitizen adapter that is used when you commit your changes is determined
